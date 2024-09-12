@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width",initial-scale=1.0>
+    <link rel="stylesheet" href="style.css" />
+    <h1 style="color:black; text-align: center"><u>SMART HOME TEMPERATURE PREDICTION</u></h1>
+    <style>
+      body {
+        background: url("static/3.jpg") center;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: sticky;
+        background-image: url("static/3.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .input {
+            margin: 5px;
+        }
+      h1 {
+        color: rgb(17, 17, 17);
+      }
+      .btn {
+        margin-top: 20px;
+        padding: 3px;
+        background-color: azure;
+        font-size: larger;
+        color: rgb(23, 24, 24);
+        cursor: pointer;
+      }
+      form {
+        color: rgb(28, 13, 101);
+        align-content: center;
+        text-align: center;
+    
+  }
+</style>
+
+    </style>
+  </head>
+  <body>
+    <h2 style="color: rgb(13, 129, 174); text-align: center">Let's predict</h2>
+    <div class="inputs">
+      <form action="{{ url_for('predict')}}" method="post">
+
+        <label aria-setsize="24px">CO2_room</label><br />
+        <input
+          type="text"
+          name="CO2_room"
+          
+          /><br />
+          
+        <label>Relative_humidity_room</label><br />
+        <input
+          type="text"
+          name="Relative_humidity_room"
+         
+        /><br />
+        <label>Lighting_room</label><br />
+        <input
+          type="text"
+          name="Lighting_room"
+          
+        /><br />
+        <label>Meteo_Rain</label><br />
+        <input
+          type="text"
+          name="Meteo_Rain"
+          
+        /><br />
+        <label>Meteo_Wind</label><br />
+        <input
+          type="text"
+          name="Meteo_Wind"
+          
+        /><br />
+        <label>Meteo_sun_light_in_west_facade</label><br />
+        <input
+          type="text"
+          name="Meteo_sun_light_in_west_facade"
+          
+        /><br />
+        <label>Outdoor_relative_humidity_senrsor</label><br />
+        <input
+          type="text"
+          name="Outdoor_relative_humidity_senrsor"
+         
+        /><br />
+        <a href="result.html"
+          ><button class="btn" type="submit">Predict</button></a
+        >
+      </form>
+    </div>
+
+    <br /><br />
+    <section>
+      <h3 style="color: blueviolet; text-align: center">  {{ prediction_text }}
+      </h3>
+
+    </section>
+  
+  </body>
+</html>
